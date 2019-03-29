@@ -1,0 +1,26 @@
+server:
+  port: 6868 #服务端口
+  
+#此处eureka因为要做集群，必须相互注册，所以添加服务名
+spring: 
+  application:  
+    name: wwg-microservice-eureka #指定服务名
+
+eureka:
+  client:
+    #但是如果要做集群的话，需要设成true，因为，eureka集群之间需要相互注册。
+    registerWithEureka: true #是否将自己注册到Eureka服务中，本身就是所有无需注册
+    fetchRegistry: true #是否从Eureka中获取注册信息
+    serviceUrl: #Eureka客户端与Eureka服务端进行交互的地址
+      #http://127.0.0.1:${server.port}/eureka/
+      defaultZone: http://wwg:wwg123@127.0.0.1:6869/eureka/
+  #如果禁用自我保护模式，在网络通信故障下会出现问题。    
+  #server: 
+   # enable-self-preservation: true #禁用自我保护模式
+  
+security: 
+  basic:  
+    enable: true #开启基于HTTP basic的认证
+  user: #配置用户的账号信息
+    name: wwg
+    password: wwg123
