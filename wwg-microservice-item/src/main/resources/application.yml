@@ -4,6 +4,11 @@ server:
 spring: 
   application:  
     name: wwg-microservice-item #指定服务名
+    
+logging: 
+  level:
+    org.springframework: DEBUG
+
 
 eureka:
   client:
