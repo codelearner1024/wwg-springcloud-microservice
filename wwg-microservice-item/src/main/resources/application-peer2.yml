@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8091
   
 spring: 
   application:  
@@ -18,4 +18,5 @@ eureka:
       defaultZone: http://wwg:wwg123@127.0.0.1:6868/eureka/
   instance: 
     prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
-  
+    ip-address: 127.0.0.1 #指定服务ip地址
+    instance-id: ${spring.application.name}:${server.port} #指定实例id
