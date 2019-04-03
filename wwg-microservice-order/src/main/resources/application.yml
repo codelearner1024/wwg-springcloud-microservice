@@ -17,3 +17,8 @@ eureka:
       defaultZone: http://wwg:wwg123@127.0.0.1:6868/eureka/
   instance: 
     prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
+    
+    #一般采用默认策略
+#wwg-microservice-item:  
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
