@@ -1,0 +1,13 @@
+server:
+  port: 6688 #服务端口
+
+spring: 
+  application:  
+    name: wwg-microservice-config-server #指定服务名
+  cloud:  
+    config:
+      server:
+        git: #配置git仓库地址
+          uri: http://192.168.2.139:10080/codelearner1024/wwg-config-server.git
+          username: codelearner1024
+          password: wwg123456
