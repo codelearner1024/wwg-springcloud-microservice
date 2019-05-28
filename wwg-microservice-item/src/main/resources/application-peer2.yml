@@ -20,3 +20,8 @@ eureka:
     prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
     ip-address: 127.0.0.1 #指定服务ip地址
     instance-id: ${spring.application.name}:${server.port} #指定实例id
+
+#在配置让config_client动态加载配置文件的时候设置的。    
+management:
+  security:
+    enabled: false #是否开启actuator安全认证

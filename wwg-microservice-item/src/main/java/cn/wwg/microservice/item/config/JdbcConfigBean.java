@@ -1,9 +1,11 @@
 package cn.wwg.microservice.item.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.stereotype.Component;
 
 @Component//加入到Spring容器
+@RefreshScope//4.5.3.为JdbcConfigBean添加@RefreshScope注解
 public class JdbcConfigBean {
 
 	@Value("${jdbc.url}")
