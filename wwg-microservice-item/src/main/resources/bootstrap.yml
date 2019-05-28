@@ -1,7 +1,7 @@
 spring:
   cloud: 
     config:
-      name: microservice #对应的配置服务中的配置文件的名称。
+      name: microservice #对应的配置服务中的配置文件的名称。即gogs服务器上配置文件microservice-dev.properties的前缀 microservice
       uri: http://127.0.0.1:6688/
       profile: dev #对应配置服务中的{profile}
       label: master #对应的分支
