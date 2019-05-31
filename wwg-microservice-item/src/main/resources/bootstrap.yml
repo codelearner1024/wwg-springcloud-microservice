@@ -1,7 +1,17 @@
-spring:
+
+# 该配置需要重新再配置，因为该配置文件加载优先于application.yml
+eureka:
+  client:
+    serviceUrl: #Eureka客户端与Eureka服务端进行交互的地址
+      defaultZone: http://wwg:wwg123@127.0.0.1:6868/eureka/
+
+spring: 
   cloud: 
     config:
       name: microservice #对应的配置服务中的配置文件的名称。即gogs服务器上配置文件microservice-dev.properties的前缀 microservice
-      uri: http://127.0.0.1:6688/
+      # uri: http://127.0.0.1:6688/ 配置中心注册到eureka后能够通过服务名找到，不再需要url硬编码
+      discovery: 
+        enabled: true #启用发现服务功能
+        service-id: wwg-microservice-config-server #指定服务名称
       profile: dev #对应配置服务中的{profile}
       label: master #对应的分支
