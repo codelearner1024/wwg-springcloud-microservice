@@ -2,7 +2,7 @@ package cn.wwg.microservice.apigateway.filter;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 
 import com.netflix.zuul.ZuulFilter;
