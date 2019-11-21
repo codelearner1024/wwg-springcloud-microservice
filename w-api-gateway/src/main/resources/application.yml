@@ -6,9 +6,10 @@ spring:
     name: wwg-microservice-api-gateway #指定服务名
     
 logging: 
-  level:
-    org.springframework: DEBUG
-
+  config: classpath:config/logback-spring.xml
+  path: ./logs
+#  level:
+#    org.springframework: DEBUG
 
 eureka:
   client:

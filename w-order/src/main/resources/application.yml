@@ -1,9 +1,9 @@
 server:
   port: 8082
 
-module: 
-  item: 
-    url: http://127.0.0.1:8081/item/
+#module: 
+#  item: 
+#    url: http://127.0.0.1:8081/item/
   
 spring: 
   application:  
