@@ -28,6 +28,7 @@ zuul:
 #      url: http://127.0.0.1:8081 #真正的微服务地址    面向服务配置，不破坏Hystrix、Ribbon特性
 #      serviceId: wwg-microservice-item #指定Eureka注册中心中的服务id
     wwg-microservice-item: /item-service/**   #替代path和serviceId的功能的简化配置
+    wwg-microservice-order: /order-service/**
   # 忽略以下服务列表
 #  ignored-services: wwg-microservice-eureka
   # 忽略所有服务列表

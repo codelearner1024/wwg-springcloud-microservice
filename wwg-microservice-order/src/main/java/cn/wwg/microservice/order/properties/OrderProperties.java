@@ -4,7 +4,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix="itcast") //以itcast开头的配置被匹配到
+@ConfigurationProperties(prefix="autoDefine") //以autoDefine开头的配置被匹配到
 public class OrderProperties {
 	
 	private ItemProperties item = new ItemProperties();

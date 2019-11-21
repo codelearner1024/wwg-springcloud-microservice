@@ -16,7 +16,7 @@ import cn.wwg.microservice.order.pojo.OrderDetail;
 @Service
 public class OrderService {
 
-	private static final Map<String, Order> MAP = new HashMap<String, Order>();
+	private static final Map<String, Order> MAP = new HashMap<>();
 
 	static {
 		// 构造测试数据
@@ -25,7 +25,7 @@ public class OrderService {
 		order.setCreateDate(new Date());
 		order.setUpdateDate(order.getCreateDate());
 		order.setUserId(1L);
-		List<OrderDetail> orderDetails = new ArrayList<OrderDetail>();
+		List<OrderDetail> orderDetails = new ArrayList<>();
 
 		Item item = new Item();// 此处并没有商品的数据，需要调用商品微服务获取
 		item.setId(1L);

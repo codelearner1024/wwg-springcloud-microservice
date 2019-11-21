@@ -9,7 +9,7 @@ import cn.wwg.microservice.item.pojo.Item;
 @Service
 public class ItemService {
 	
-private static final Map<Long, Item> MAP = new HashMap<Long, Item>();
+private static final Map<Long, Item> MAP = new HashMap<>();
 	
 	static { // 准备一些静态数据
 		MAP.put(1L, new Item(1L, "商品标题1", "http://图片1", "商品描述1", 1000L));
