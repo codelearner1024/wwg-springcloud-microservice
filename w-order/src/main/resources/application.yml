@@ -1,9 +1,17 @@
 server:
   port: 8082
 
-#module: 
-#  item: 
-#    url: http://127.0.0.1:8081/item/
+logging:
+  config: classpath:config/logback-spring.xml
+  # 日志路径  ./logs /var/log/${spring.application.name}
+  path: ./logs
+  # 分割文件设置 超过 100MB就进行分割，最大保留历史 90天
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+       # 自己工程下命名的类的日志级别
+    cn.wwg.microservice: DEBUG
   
 spring: 
   application:  
@@ -17,7 +25,7 @@ eureka:
       defaultZone: http://wwg:wwg123@127.0.0.1:6868/eureka/
   instance: 
     prefer-ip-address: true #将自己的ip地址注册到Eureka服务中
-    
+    instance-id: ${spring.application.name}:${server.port} #指定实例id
     #一般采用默认策略
 #wwg-microservice-item:  
 #  ribbon:
