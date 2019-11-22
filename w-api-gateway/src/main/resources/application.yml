@@ -5,11 +5,17 @@ spring:
   application:  
     name: wwg-microservice-api-gateway #指定服务名
     
-logging: 
+logging:
   config: classpath:config/logback-spring.xml
+  # 日志路径  ./logs /var/log/${spring.application.name}
   path: ./logs
-#  level:
-#    org.springframework: DEBUG
+  # 分割文件设置 超过 100MB就进行分割，最大保留历史 90天
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+       # 自己工程下命名的类的日志级别
+    cn.wwg.microservice: DEBUG
 
 eureka:
   client:

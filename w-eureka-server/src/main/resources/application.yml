@@ -1,0 +1,11 @@
+#此处eureka因为要做集群，必须相互注册，所以添加服务名
+spring: 
+  application:  
+    name: wwg-microservice-eureka #指定服务名
+
+security: 
+  basic:  
+    enable: true #开启基于HTTP basic的认证
+  user: #配置用户的账号信息
+    name: wwg
+    password: wwg123
