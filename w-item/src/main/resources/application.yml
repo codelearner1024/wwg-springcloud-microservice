@@ -13,6 +13,25 @@ logging:
 spring: 
   application:  
     name: wwg-microservice-item #指定服务名    
+    #如果zipkin的server端配置了默认端口号为9411，且在本地，则客户端不再需要配置
+  zipkin:
+    rabbitmq:
+      queue: zipkin
+  rabbitmq: #RabbitMQ相关的配置
+    host: 127.0.0.1
+    # 默认端口
+    port: 5672
+    # 默认账号密码
+    username: guest
+    password: guest
+#    base-url: http://localhost:9411 
+  #接口默认全部采样
+  sleuth:
+    web:
+      client:
+        enabled: true
+    sampler:
+      percentage: 1.0
 eureka:
   client:
     registerWithEureka: true #是否将自己注册到Eureka服务中，默认为true

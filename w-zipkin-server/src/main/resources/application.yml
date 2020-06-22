@@ -1,5 +1,6 @@
 server:
-  port: 8082
+  # 设置 服务端 口号为9411（客户端整合时候，自动化配置会连接9411 端口 ，所以在服务端设置了端口为9411的话，客户端可以省去这个配置）
+  port: 9411
 
 logging:
   config: classpath:config/logback-spring.xml
@@ -15,26 +16,15 @@ logging:
   
 spring: 
   application:  
-    name: wwg-microservice-order #指定服务名
-      #如果zipkin的server端配置了默认端口号为9411，且在本地，则客户端不再需要配置
-  zipkin:
+    name: wwg-microservice-zipkin-server #指定服务名
+zipkin:
+  collector:
     rabbitmq:
+      addresses: localhost:5672
+      password: guest
+      username: guest
       queue: zipkin
-#    enabled: true
-#    base-url: http://${ZIPKIN_HOST:127.0.0.1}:${ZIPKIN_PORT:9411}
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-  #接口默认全部采样
-  sleuth:
-    web:
-      client:
-        enabled: true
-    sampler:
-      # 采样比例为: 0.1(即10%),设置的值介于0.0到1.0之间，1.0则表示全部采集。
-      percentage: 1.0
+
 eureka:
   client:
     registerWithEureka: true #是否将自己注册到Eureka服务中，默认为true
